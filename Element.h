@@ -10,7 +10,7 @@ class Element {
 public:
     virtual std::ostream & ins(std::ostream &)const =0;
     virtual std::istream & ext(std::istream &)=0;
-     double lengthVector(double ,double ,double ) ;
+     double lengthVector() ;
 
 
 private:

@@ -2,10 +2,12 @@
 #include "Element.h"
 #include "Point.h"
 #include "Vector.h"
+#include "Triangle.h"
+
 using namespace std;
 
 int main( ) {
-    Point p0;
+    /*Point p0;
     Point p(1,-1,2);
     Point p1(2,-3,0);
     cout<<p0<<"\n";
@@ -15,7 +17,11 @@ int main( ) {
     cout<<p0<<"\n";
     cout<<v.lengthVector(p,p1)<<"\n";
     cout<<"single "<<v.singleVector(6,4,-1)<<"\n";
-    cout << "v1"<<v1;
+    cout << "v1"<<v1;*/
+    Triangle triangle(1,2,4);
+    cout<<triangle.perimetur()<<"\n";
+    cout<<triangle.kindOfTriangle();
+
 
     return  0;
 }
