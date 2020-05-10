@@ -19,7 +19,7 @@ public:
 
     virtual ~Vector( );
     double lengthVector(const Point&,const Point&);
-    int singleVector(double ,double ,double );
+    int directionVector(double ,double ,double );
     double lengthVector(double ,double ,double ) ;
     int sumVector(const Point&,const Point&);//???
     std::ostream & operator<<(std::ostream &);

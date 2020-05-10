@@ -31,18 +31,16 @@ double Vector::lengthVector(double x,double y ,double z ){
 }
 
 
-int Vector::singleVector( double x,double y,double z) {
+int Vector::directionVector( double x,double y,double z) {
     double len=lengthVector(x,y,z);
     int single=(int ) sqrt((x/len)+(y/len)-(z/len));
     try {
        if (single<1)
        throw VectorLengthException("single vector is not be =0",1);
     }
-    catch (VectorLengthException & exe) {
-        std::cerr<< typeid(exe).name();
+    catch (VectorLengthException & exept) {
+        std::cerr<< typeid(exept).name();
     }
-
-
     return single;
 }
 std::ostream & Vector::ins(std::ostream &out)const {

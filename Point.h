@@ -25,6 +25,8 @@ public:
 
     virtual Point &operator=(const Point&);
     virtual bool operator==( const Point &rhs ) const;
+    bool operator < (const Point &) const ;
+    bool operator > ( const Point & ) const ;
     virtual std::ostream & ins(std::ostream &)const ;
     virtual std::istream & ext(std::istream &);
 
