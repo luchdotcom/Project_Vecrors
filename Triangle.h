@@ -28,10 +28,11 @@ public:
     double area();//ok
     double perimetur();///ok
     Point mediCenter();
-    std::string kindOfTriangle();
+    std::string kindOfTriangle()const ;
 
 private:
     double a,b,c;
+    std::string kind;
 };
 
  std::ostream &operator<<( std::ostream &os, const Triangle &triangle );

@@ -22,10 +22,10 @@ Triangle &Triangle::operator=( const Triangle &point ) {
         c = point.c;
     }
     return *this ;
-}
+}/*
 bool Triangle::operator==( const Triangle &rhs ) const {
     return false;
-}
+}*/
 bool Triangle::operator < (const Triangle & point) const {
 
 }
@@ -43,10 +43,12 @@ Point Triangle::mediCenter(){
     return *this;
 }
 
-/*bool Triangle::operator==( const Triangle &rhs ) const {
+bool Triangle::operator==( const Triangle &rhs ) const {
     Point::operator==( rhs );
-    return
-}*/
+
+
+    return 0;////
+}
 
 std::ostream &Triangle::ins( std::ostream &out ) const {
     return Point::ins( out );
@@ -55,21 +57,24 @@ std::ostream &Triangle::ins( std::ostream &out ) const {
 std::istream &Triangle::ext( std::istream &in) {
     return Point::ext( in);
 }
+//определяне на вида на триъгълника
 
-std::string Triangle::kindOfTriangle( ) {
+std::string Triangle::kindOfTriangle( ) const{
     std::string kind;
+    double p;
+    p=a*a+b*b;
     if (a==b||b==c){
         kind="equilateral triangle";
-    } else if (abs(a - b) < 1.0e-4 && abs (a- c) < 1.0e-14 && abs(b - c) < 1.0e-14 ){
+    } else if (std::abs(a - b) < 1.0e-4 && std::abs (a- c) < 1.0e-14 && std::abs(b - c) < 1.0e-14 ){
         kind="isosceles triangle";
     }
-    else if (){
+    else if (c*c>=p){
         kind="acute-angled triangle";
     }
-    else if  (abs( a * a + b*b - c*c) <1.0e-14 && abs(a*a + c*c - b*b) < 1.0e-14 && abs(b*b + c*c - a*a) < 1.0e-14 ){
+    else if  (std::abs( a*a + b*b - c*c) <1.0e-14 && std::abs(a*a + c*c - b*b) < 1.0e-14 && std::abs(b*b + c*c - a*a) < 1.0e-14 ){
         kind="rectangular triangle";
     }
-    else if (){
+    else if (c>=a+b){
         kind="obtuse-angle triangle";
     }
     return kind;

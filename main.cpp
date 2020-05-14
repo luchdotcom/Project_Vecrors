@@ -17,7 +17,10 @@ int main( ) {
     cout<<p0<<"\n";
     cout<<v.lengthVector(p,p1)<<"\n";
     cout<<"single "<<v.directionVector(6,4,-1)<<"\n";
-    cout << "v1"<<v1;
+    cout << "v1"<<v1<<"\n";
+    Triangle triangle(5,4,8);
+    cout<<"triangele is a "<<triangle.kindOfTriangle()<< "\n aria is= "<<triangle.area()<<"\n perimeter is= "<<
+            triangle.perimetur();
 
 
     return  0;
