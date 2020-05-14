@@ -21,6 +21,8 @@ int main( ) {
     Triangle triangle(5,4,8);
     cout<<"triangele is a "<<triangle.kindOfTriangle()<< "\n aria is= "<<triangle.area()<<"\n perimeter is= "<<
             triangle.perimetur();
+    cout<<"Mediana is "<<triangle.mediCenter();
+    
 
 
     return  0;

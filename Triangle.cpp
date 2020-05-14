@@ -40,7 +40,13 @@ double Triangle::perimetur(){
     return a+b+c;
 }
 Point Triangle::mediCenter(){
-    return *this;
+    //намиране на медианите на триъгълника
+    double Ma,Mb,Mc;
+    Ma=sqrt((2*c*c)+(2*b*b)-a*a)/2;
+    Mb=sqrt((2*c*c)+(2*a*a)-b*b)/2;
+    Mc=(sqrt((2*a*a)+(2*b*b)-c*c))/2;
+
+    return Point(Ma,Mb,Mc);
 }
 
 bool Triangle::operator==( const Triangle &rhs ) const {
