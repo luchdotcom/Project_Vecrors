@@ -15,43 +15,43 @@ Vector::Vector(const Point & a,const Point& b ){
 
 Vector::~Vector( ) {
 }
+//изчисляване на дължина на вектор чрез 2 точки, която връща реалното число
 double Vector::lengthVector(const Point& lhs,const Point& rhs){
-    this->x=rhs.getX()-lhs.getX();
+    x=rhs.getX()-lhs.getX();
     y=rhs.getY()-lhs.getY();
     z=rhs.getZ()-lhs.getZ();
     double sum=sqrt((x*x) + (y*y)+(z*z));
     return sum;
 }
+//изчисляване на дължина на вектор чрез 3 реални стойности, която връща реалното число
 double Vector::lengthVector(double x,double y ,double z ){
-    double sum=sqrt((x*x) + (y*y)+(z*z));
-    this->x=x/sum;
-    this->y=y/sum;
-    this->z=z/sum;
-    return sum;//???
+    return sqrt((x*x) + (y*y)+(z*z));
 }
 
+//изчисляване на посока на вектор, която връща единичния вектор
+int Vector::directionVector( double x1,double y1,double z1) {
+    double len=lengthVector((x1/len),(y1/len),(z1/len));
 
-int Vector::directionVector( double x,double y,double z) {
-    double len=lengthVector(x,y,z);
-    int single=(int ) sqrt((x/len)+(y/len)-(z/len));
-    try {
-       if (single<1)
-       throw VectorLengthException("single vector is not be =0",1);
-    }
-    catch (VectorLengthException & exept) {
-        std::cerr<< typeid(exept).name();
-    }
-    return single;
+       if (len==0) {
+           throw VectorLengthException( "Vector length is impossible not be =0" );
+       }
+    return len;
 }
 std::ostream & Vector::ins(std::ostream &out)const {
    return out<<x<<y<<z;
-
-
 }
  std::istream & Vector::ext(std::istream & in){
     double a,b,c;
     in>>a>>b>>c;
     return in;
+}
+//проверка за нулев вектор
+bool Vector::nullVector( ) const {
+    return x == y == z == 0;
+}
+
+bool Vector::paralelInVectors( ) const {
+    return false;
 }
 
 std::ostream & operator<<(std::ostream & out,const Vector& rhs){

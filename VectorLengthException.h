@@ -8,7 +8,7 @@
 
 class VectorLengthException : public std::exception{
 public:
-    VectorLengthException( const std::string &, int );
+    VectorLengthException( const std::string & );
 
 
 private:

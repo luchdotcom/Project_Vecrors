@@ -15,13 +15,10 @@ int main( ) {
     Vector v1(3,5,4);
     p0 = p;
     cout<<p0<<"\n";
-    cout<<v.lengthVector(p,p1)<<"\n";
-    cout<<"single "<<v.directionVector(6,4,-1)<<"\n";
-    cout << "v1"<<v1<<"\n";
-    Triangle triangle(5,4,8);
-    cout<<"triangele is a "<<triangle.kindOfTriangle()<< "\n aria is= "<<triangle.area()<<"\n perimeter is= "<<
-            triangle.perimetur();
-    cout<<"Mediana is "<<triangle.mediCenter();
+    cout<<" length by 2 points= "<<v.lengthVector(p,p1)<<"\n";
+    cout<<"length by 3 values= "<<v.lengthVector(3,5,8)<<"\n";
+//    cout<<"single= "<<v.directionVector(0,0,0)<<"\n";
+    cout << "v1= "<<v1<<"\n";
     
 
 

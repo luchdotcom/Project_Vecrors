@@ -4,5 +4,5 @@
 
 #include "VectorLengthException.h"
 
-VectorLengthException:: VectorLengthException( const std::string& txt, int min):std::exception(),min(min){}
+VectorLengthException:: VectorLengthException( const std::string& txt):std::exception(){}
 

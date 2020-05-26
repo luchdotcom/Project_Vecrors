@@ -22,7 +22,9 @@ public:
     int directionVector(double ,double ,double );
     double lengthVector(double ,double ,double ) ;
     int sumVector(const Point&,const Point&);//???
-    std::ostream & operator<<(std::ostream &);
+    bool nullVector()const ;
+    bool paralelInVectors()const ;
+
 
 
     virtual std::ostream & ins(std::ostream &)const ;
