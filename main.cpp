@@ -17,7 +17,13 @@ int main( ) {
     cout<<p0<<"\n";
     cout<<" length by 2 points= "<<v.lengthVector(p,p1)<<"\n";
     cout<<"length by 3 values= "<<v.lengthVector(3,5,8)<<"\n";
-//    cout<<"single= "<<v.directionVector(0,0,0)<<"\n";
+    try {
+        cout<<"single= "<<v.directionVector(3,5,0)<<"\n";
+    } catch (double & ex) {
+        cerr<<ex;
+
+    }
+
     cout << "v1= "<<v1<<"\n";
     
 

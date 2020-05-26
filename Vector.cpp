@@ -20,22 +20,24 @@ double Vector::lengthVector(const Point& lhs,const Point& rhs){
     x=rhs.getX()-lhs.getX();
     y=rhs.getY()-lhs.getY();
     z=rhs.getZ()-lhs.getZ();
-    double sum=sqrt((x*x) + (y*y)+(z*z));
+    double sum=sqrt(pow(x,2) + pow(y,2) + pow(z,2));
     return sum;
 }
 //изчисляване на дължина на вектор чрез 3 реални стойности, която връща реалното число
 double Vector::lengthVector(double x,double y ,double z ){
-    return sqrt((x*x) + (y*y)+(z*z));
+    return sqrt(pow(x,2) + pow(y,2) + pow(z,2));
 }
 
 //изчисляване на посока на вектор, която връща единичния вектор
-int Vector::directionVector( double x1,double y1,double z1) {
-    double len=lengthVector((x1/len),(y1/len),(z1/len));
+Vector Vector::directionVector( double x1,double y1,double z1) {
+    double x=x1/lengthVector(x1,y1,z1);
+    double y=y1/lengthVector(x1,y1,z1);
+    double z=z1/lengthVector(x1,y1,z1);
 
-       if (len==0) {
-           throw VectorLengthException( "Vector length is impossible not be =0" );
+       if (lengthVector(x,y,z)==0) {
+           throw VectorLengthException( "Vector length is  =0" );
        }
-    return len;
+    return Vector(x,y,z);
 }
 std::ostream & Vector::ins(std::ostream &out)const {
    return out<<x<<y<<z;
