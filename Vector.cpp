@@ -51,11 +51,18 @@ std::ostream & Vector::ins(std::ostream &out)const {
 bool Vector::nullVector( ) const {
     return x == y == z == 0;
 }
+//TODO
+bool Vector::parallelInVectors( const Vector&rhs) const {
 
-bool Vector::paralelInVectors( ) const {
-    return false;
+    return x / rhs.x == y / rhs.y == z / rhs.z;
 }
 
+bool Vector::perpendicular(const Vector& rhs)const {
+    if (lengthVector(x,y,z)==0||lengthVector(rhs.x,rhs.y,rhs.z)==0){
+        throw VectorLengthException(" ones on vectoir is =0");
+    }
+    return (x*rhs.x+y*rhs.y+z*rhs.z==0);
+}
 std::ostream & operator<<(std::ostream & out,const Vector& rhs){
     return rhs.ins(out);
 }

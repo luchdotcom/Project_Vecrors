@@ -20,10 +20,12 @@ public:
     virtual ~Vector( );
     double lengthVector(const Point&,const Point&);
     Vector directionVector(double ,double ,double );
-    double lengthVector(double ,double ,double ) ;
+    static double lengthVector(double ,double ,double ) ;
     int sumVector(const Point&,const Point&);//???
     bool nullVector()const ;
-    bool paralelInVectors()const ;
+    bool parallelInVectors(const Vector&)const ;
+
+     bool perpendicular(const Vector&)const ;
 
 
 
