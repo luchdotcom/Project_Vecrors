@@ -102,11 +102,12 @@ Vector Vector::operator*(double realDigit){
     return Vector(x ,y ,z);
 }
 //векторно произведение на два вектора, чрез операция ^ като резултатът е вектор.
-Vector Vector::operator^(const Vector& rhs) const{
-    return Vector((y*rhs.z)-(z*rhs.y),((x*rhs.z)-(z*rhs.x)),(x*rhs.y)-(y*rhs.x));
-
+Vector Vector::operator^(const Vector& rhs) const {
+    return Vector(( y * rhs.z ) - ( z * rhs.y ), (( x * rhs.z ) - ( z * rhs.x )), ( x * rhs.y ) - ( y * rhs.x ));
 }
-double Vector::operator()(const Vector&v1, const Vector& v2){
+//смесено произведение на три вектора, чрез операция ()
+double Vector::operator()(const Vector&u, const Vector& v){
+    return (((u.y*v.z)-(u.z*v.y))-((u.x*v.z)-(u.z*v.x))+((u.x*v.y)-(u.y*v.x)));
 
 }
 std::ostream & operator<<(std::ostream & out,const Vector& rhs){

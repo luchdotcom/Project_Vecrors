@@ -12,8 +12,9 @@ int main( ) {
     Point p1(2,-3,0);
     cout<<p0<<"\n";
     Vector v(p,p1);
-    Vector v1(3,4,2);
-    Vector v2(5,2,6);
+    Vector v1(1,-1,2);
+    Vector v2(0,7,-2);
+    Vector v3(2,-3,0);
     p0 = p;
     cout<<p0<<"\n";
     cout<<" length by 2 points= "<<v.lengthVector(p,p1)<<"\n";
@@ -35,6 +36,10 @@ int main( ) {
 
     Vector res=v1 ^ v2;
     cout<<"multiply  Vectors whit 2 vector  = "<<res<<endl;
+
+
+    cout<<"mixed work  whit 3 vector  = "<<v1(v2,v3)<<endl;
+
 
 
     return  0;
