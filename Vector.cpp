@@ -63,6 +63,12 @@ bool Vector::perpendicular(const Vector& rhs)const {
     }
     return (x*rhs.x+y*rhs.y+z*rhs.z==0);
 }
+Vector Vector::operator+(Vector&rhs){
+    this->x=x+rhs.x;
+    this->y=y+rhs.y;
+    this->z=z+rhs.z;
+    return *this;
+}
 std::ostream & operator<<(std::ostream & out,const Vector& rhs){
     return rhs.ins(out);
 }
