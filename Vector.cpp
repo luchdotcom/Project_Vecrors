@@ -10,11 +10,10 @@ Vector::Vector( ):x(0),y(0),z(0){}
 Vector::Vector(double x,double y,double z ):x(x),y(y),z(z) {
 }
 
-Vector::Vector(const Point & a,const Point& b ){
+Vector::Vector(const Point & a,const Point& b ,x,y,z):Point(),x(x),y(y),z(z){
 }
 
-Vector::~Vector( ) {
-}
+Vector::~Vector( ) = default;
 //изчисляване на дължина на вектор чрез 2 точки, която връща реалното число
 double Vector::lengthVector(const Point& lhs,const Point& rhs){
     x=rhs.getX()-lhs.getX();

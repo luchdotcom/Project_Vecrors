@@ -11,7 +11,7 @@
 #include <cmath>
 #include "VectorLengthException.h"
 
-class Vector: public Point{
+class Vector: virtual public Point{
 public:
     Vector();
     Vector(double ,double,double );
