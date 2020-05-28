@@ -69,6 +69,12 @@ Vector Vector::operator+(Vector&rhs){
     this->z=z+rhs.z;
     return *this;
 }
+Vector Vector::operator-(Vector& rhs){
+    this->x=x-rhs.x;
+    this->y=y-rhs.y;
+    this->z=z-rhs.z;
+    return *this;
+}
 std::ostream & operator<<(std::ostream & out,const Vector& rhs){
     return rhs.ins(out);
 }
