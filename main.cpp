@@ -13,7 +13,7 @@ int main( ) {
     cout<<p0<<"\n";
     Vector v(p,p1);
     Vector v1(3,4,2);
-    Vector v2(0,2,6);
+    Vector v2(5,2,6);
     p0 = p;
     cout<<p0<<"\n";
     cout<<" length by 2 points= "<<v.lengthVector(p,p1)<<"\n";
@@ -26,9 +26,15 @@ int main( ) {
     }
 
     cout << "v1= "<<v1<<"\n";
-    cout<<v1.nullVector()<<endl;
-    cout<<" paralel   "<< v1.parallelInVectors(Vector(1,-6,3));
+    cout<<boolalpha<<v1.nullVector()<<endl;
+    cout<<" paralel   "<< boolalpha<<v1.parallelInVectors(Vector(1,-6,3))<<endl;
     cout<<"sum 2 Vectors is = "<<v1+v2<<endl;
+    cout<<"multiply 2 Vectors  = "<<v1*v2<<endl;
+    cout<<"multiply  Vectors whit real digit  = "<<v2*3.<<endl;
+    //cout<<"multiply  real digit whit Vectors  = "<<4*v2<<endl;
+
+    Vector res=v1 ^ v2;
+    cout<<"multiply  Vectors whit 2 vector  = "<<res<<endl;
 
 
     return  0;

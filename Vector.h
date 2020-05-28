@@ -17,20 +17,25 @@ public:
     Vector(double ,double,double );
     Vector(const Point&,const Point&);
 
+
     virtual ~Vector( );
     double lengthVector(const Point&,const Point&);
-    Vector directionVector(double ,double ,double );
+    static Vector directionVector(double ,double ,double );
     static double lengthVector(double ,double ,double ) ;
     bool nullVector()const ;
     bool parallelInVectors(const Vector&)const ; //todo
 
      bool perpendicular(const Vector&)const ;
-     Vector operator+(Vector&);//todo
-     Vector operator-(Vector&);//todo
-     double operator*(Vector&);//todo
-     Vector operator*(int);//todo
-     Vector operator^(Vector&);//todo
-     double operator()(Vector&, Vector&);//todo
+     Vector (const Vector&);
+     Vector& operator=(const Vector&);
+
+     Vector operator+(Vector&);//todo make separate
+     Vector operator-(Vector&);//todo make separate
+     double operator*(Vector&) const;//todo провери си формулата
+     explicit operator double () const ;//todo
+     Vector operator*(double );//todo make separate
+     Vector operator^(const Vector&) const;//todo make separate
+     double operator()(const Vector&, const Vector&);//todo
 
 
 
@@ -41,5 +46,6 @@ private:
 };
 std::ostream & operator<<(std::ostream &,const Vector&);
 std::istream & operator>>(std::istream &, Vector&);
+//Vector operator^(Vector&,Vector& );
 
 #endif //PROJECT_VECRORS_VECTOR_H
