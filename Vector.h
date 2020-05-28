@@ -27,7 +27,7 @@ public:
 
      bool perpendicular(const Vector&)const ;
      Vector (const Vector&);
-     Vector& operator=(const Vector&);
+      Vector& operator=(const Vector&);
 
      Vector operator+(Vector&);//todo make separate
      Vector operator-(Vector&);//todo make separate

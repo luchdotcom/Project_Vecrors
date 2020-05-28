@@ -3,6 +3,17 @@
 //
 
 #include "Line.h"
+Line::Line( ) {}
+
+Line::Line( const Line & ) {
+
+}
+
+Line &Line::operator=( const Line & ) {
+    return *this;
+}
+
+Line::~Line( ) {}
 
 Line::Line( Vector & lhs, Point &rhs ):Vector(lhs),Point(rhs) {
 
@@ -47,3 +58,5 @@ bool Line::operator!=( const Line & ) {
 bool Line::operator|( const Line & ) {
     return false;
 }
+
+
