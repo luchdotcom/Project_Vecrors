@@ -104,7 +104,7 @@ Vector Vector::operator*(double realDigit){
 }
 //векторно произведение на два вектора, чрез операция ^ като резултатът е вектор.
 Vector Vector::operator^(const Vector& rhs) const {
-    return Vector(( y * rhs.z ) - ( z * rhs.y ), (( x * rhs.z ) - ( z * rhs.x )), ( x * rhs.y ) - ( y * rhs.x ));
+    return Vector(( y * rhs.z ) - ( z * rhs.y ), (( -x * rhs.z ) + ( z * rhs.x )), ( x * rhs.y ) - ( y * rhs.x ));
 }
 //смесено произведение на три вектора, чрез операция ()
 double Vector::operator()(const Vector&u, const Vector& v){
