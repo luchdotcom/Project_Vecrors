@@ -52,7 +52,7 @@ bool Vector::nullVector( ) const {
 //TODO
 bool Vector::parallelInVectors( const Vector&rhs) const {
 
-    return x / rhs.x == y / rhs.y == z / rhs.z;
+    return x / rhs.x == y /rhs.y&& y/rhs.y == z / rhs.z;
 }
 //• проверка за перпендикулярност на текущия вектор
 bool Vector::perpendicular(const Vector& rhs)const {

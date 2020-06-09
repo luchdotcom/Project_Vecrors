@@ -44,8 +44,7 @@ public:
 private:
     double x,y,z;
 };
-std::ostream & operator<<(std::ostream &,const Vector&);
-std::istream & operator>>(std::istream &, Vector&);
+
 //Vector operator^(Vector&,Vector& );
 
 #endif //PROJECT_VECRORS_VECTOR_H
