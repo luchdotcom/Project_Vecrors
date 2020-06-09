@@ -49,9 +49,11 @@ std::ostream & Vector::ins(std::ostream &out)const {
 bool Vector::nullVector( ) const {
     return x == y == z == 0;
 }
-//TODO
-bool Vector::parallelInVectors( const Vector&rhs) const {
 
+bool Vector::parallelInVectors( const Vector&rhs) const {
+    if ( this->nullVector()||rhs.nullVector()){
+        throw VectorLengthException("have a null vector");
+    }
     return x / rhs.x == y /rhs.y&& y/rhs.y == z / rhs.z;
 }
 //• проверка за перпендикулярност на текущия вектор

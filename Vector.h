@@ -23,7 +23,7 @@ public:
     static Vector directionVector(double ,double ,double );
     static double lengthVector(double ,double ,double ) ;
     bool nullVector()const ;
-    bool parallelInVectors(const Vector&)const ; //todo
+    bool parallelInVectors(const Vector&)const ;
 
      bool perpendicular(const Vector&)const ;
      Vector (const Vector&);
