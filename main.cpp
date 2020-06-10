@@ -37,6 +37,7 @@ int main( ) {
     Vector res=v1 ^ v2;
     cout<<"multiply  Vectors whit 2 vector  = "<<res<<endl;
 
+    cout<<"null vector  = "<<v1.nullVector()<<endl;
 
     cout<<"mixed work  whit 3 vector  = "<<v1(v2,v3)<<endl;
 

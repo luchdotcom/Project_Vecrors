@@ -12,7 +12,7 @@
 class Line : virtual public Point,virtual public Vector{
 public:
     Line();
-    Line(const Line&);
+    Line(const Line&);//???
     Line & operator=(const Line&);
    virtual ~Line();
     Line(Vector&,Point&);//todo

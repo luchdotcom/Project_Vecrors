@@ -38,7 +38,7 @@ Vector Vector::directionVector( double x1,double y1,double z1) {
     return Vector(x,y,z);
 }
 std::ostream & Vector::ins(std::ostream &out)const {
-   return out<<x<<y<<z;
+   return out<<x<<" "<<y<<" "<<z;
 }
  std::istream & Vector::ext(std::istream & in){
     double a,b,c;
@@ -51,7 +51,7 @@ bool Vector::nullVector( ) const {
 }
 
 bool Vector::parallelInVectors( const Vector&rhs) const {
-    if ( this->nullVector()||rhs.nullVector()){
+    if ( lengthVector(x,y,z)==0||lengthVector(rhs.x,rhs.y,rhs.z)==0){
         throw VectorLengthException("have a null vector");
     }
     return x / rhs.x == y /rhs.y&& y/rhs.y == z / rhs.z;
@@ -94,7 +94,7 @@ double Vector::operator*(Vector&rhs) const{
    return ((x*rhs.x)+(y*rhs.y)+(z*rhs.z));
 }
 Vector::operator double () const {
-    return 0;
+    return x;
 }
 Vector Vector::operator*(double realDigit){
     x=x*realDigit;
@@ -108,7 +108,7 @@ Vector Vector::operator^(const Vector& rhs) const {
 }
 //смесено произведение на три вектора, чрез операция ()
 double Vector::operator()(const Vector&u, const Vector& v){
-    return (((u.y*v.z)-(u.z*v.y))-((u.x*v.z)-(u.z*v.x))+((u.x*v.y)-(u.y*v.x)));
+    return (((u.y*v.z)-(u.z*v.y))+((u.x*v.z)-(u.z*v.x))-((u.x*v.y)-(u.y*v.x)));
 
 }
 std::ostream & operator<<(std::ostream & out,const Vector& rhs){

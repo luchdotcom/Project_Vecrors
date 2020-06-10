@@ -9,7 +9,11 @@ Line::Line( const Line & ) {
 
 }
 
-Line &Line::operator=( const Line & ) {
+Line &Line::operator=( const Line & rhs) {
+    Vector::operator=(rhs);
+    if (this!= &rhs){
+        delete this;
+    }
     return *this;
 }
 
