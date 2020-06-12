@@ -18,7 +18,7 @@ public:
     Triangle( double d, double d1, double d2 );
     Triangle &operator=( const Triangle &point ) ;
 
-    virtual bool operator ==( const Triangle &rhs ) const;
+     bool operator ==( const Point &rhs ) const;
     bool operator < (const Triangle &) const ;
     bool operator > ( const Triangle & ) const ;
 

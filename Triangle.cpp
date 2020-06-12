@@ -6,7 +6,7 @@
 
 Triangle::Triangle( const Point &point ) : Point( point ) { }
 
-Triangle::Triangle( ) { }
+Triangle::Triangle( ):a(0),b(0),c(0) { }
 
 Triangle::Triangle( double a, double b, double c ) : a(a),b(b),c(c) { }
 
@@ -49,11 +49,10 @@ Point Triangle::mediCenter(){
     return Point(Ma,Mb,Mc);
 }
 
-bool Triangle::operator==( const Triangle &rhs ) const {
-    Point::operator==( rhs );
+bool Triangle::operator==( const Point &rhs ) const {
 
 
-    return 0;////
+    return false;////
 }
 
 std::ostream &Triangle::ins( std::ostream &out ) const {
