@@ -29,18 +29,18 @@ public:
      Vector (const Vector&);
       Vector& operator=(const Vector&);
 
-     Vector operator+(Vector&);//todo make separate
-     Vector operator-(Vector&);//todo make separate
+     Vector operator+(Vector&);
+     Vector operator-(Vector&);
      double operator*(Vector&) const;//todo провери си формулата
-     explicit operator double () const ;//todo
-     Vector operator*(double );//todo make separate
-     Vector operator^(const Vector&) const;//todo make separate
-     double operator()(const Vector&, const Vector&);//todo
+     explicit operator double () const ;
+     Vector operator*(double );
+     Vector operator^(const Vector&) const;
+     double operator()(const Vector&, const Vector&);
 
 
 
-    virtual std::ostream & ins(std::ostream &)const ;
-    virtual std::istream & ext(std::istream &);
+    std::ostream & ins(std::ostream &)const override ;
+    std::istream & ext(std::istream &) override ;
 private:
     double x,y,z;
 };

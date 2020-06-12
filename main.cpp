@@ -2,20 +2,22 @@
 #include "Element.h"
 #include "Point.h"
 #include "Vector.h"
+#include "Line.h"
 #include "Triangle.h"
 
 using namespace std;
 
 int main( ) {
     Point p0;
-    Point p(1,-1,2);
-    Point p1(2,-3,0);
+    Point p(1,0,4);
+    Point p1(4,0,5);
     cout<<p0<<"\n";
     Vector v(p,p1);
     Vector v1(1,-1,2);
     Vector v2(0,7,-2);
     Vector v3(2,-3,0);
     p0 = p;
+
     cout<<p0<<"\n";
     cout<<" length by 2 points= "<<v.lengthVector(p,p1)<<"\n";
     cout<<"length by 3 values= "<<v.lengthVector(3,5,8)<<"\n";
@@ -40,8 +42,8 @@ int main( ) {
     cout<<"null vector  = "<<v1.nullVector()<<endl;
 
     cout<<"mixed work  whit 3 vector  = "<<v1(v2,v3)<<endl;
-
-
+    Line L(p,p1);
+    cout<<L.directionLine(L);
 
     return  0;
 }

@@ -12,23 +12,28 @@
 class Line : virtual public Point,virtual public Vector{
 public:
     Line();
-    Line(const Line&);//???
+    Line(const Line&);
     Line & operator=(const Line&);
-   virtual ~Line();
-    Line(Vector&,Point&);//todo
-    Line(Point&,Point&);//todo
-    Vector directionLine();//todo
-    Vector normalVector();//todo
+   ~Line() override;
+   Line(double ,double ,double );
+    Line(Vector&,Point&);
+    Line(Point&,Point&);
+    Vector directionLine(const Line&);
+    Vector normalVector( const Line&);
     double angelBetweenTwoLines();//todo
 
-    bool operator+(const Line&);//todo
-    bool operator||(const Line&);//todo
-    bool operator==(const Line&);//todo
-    bool operator&&(const Line&);//todo
-    bool operator!=(const Line&);//todo
-    bool operator|(const Line&);//todo
-
+    bool operator+(const Point&) const;
+    bool operator||(const Line&) const;
+    bool operator==(const Line&) const;
+    bool operator&&(const Line&) const;
+    bool operator!=(const Line&);
+    bool operator|(const Line&) const;
+   std::ostream& ins(std::ostream&)const override ;
+    std::istream & ext(std::istream &) override;
+private:
+    double x,y,z;
 };
-
+std::ostream & operator<<(std::ostream &,const Line&);
+std::istream & operator>>(std::istream &, Line&);
 
 #endif //PROJECT_VECRORS_LINE_H

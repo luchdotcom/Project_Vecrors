@@ -11,6 +11,9 @@ Vector::Vector(double x,double y,double z ):x(x),y(y),z(z) {
 }
 
 Vector::Vector(const Point & a,const Point& b ):Point(a){
+    x=b.getX()-a.getX();
+    y=b.getY()-a.getY();
+    z=b.getZ()-a.getZ();
 }
 
 Vector::~Vector( ) = default;
@@ -38,7 +41,7 @@ Vector Vector::directionVector( double x1,double y1,double z1) {
     return Vector(x,y,z);
 }
 std::ostream & Vector::ins(std::ostream &out)const {
-   return out<<x<<" "<<y<<" "<<z;
+   return out<<x<<","<<y<<","<<z;
 }
  std::istream & Vector::ext(std::istream & in){
     double a,b,c;
@@ -66,6 +69,7 @@ bool Vector::perpendicular(const Vector& rhs)const {
 Vector::Vector (const Vector& rhs):x(rhs.x),y(rhs.y),z(rhs.z){
 }
 Vector& Vector::operator=(const Vector& rhs){
+    Point::operator=(rhs);
     if (this!=&rhs){
         delete this;
     }
