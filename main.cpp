@@ -3,6 +3,7 @@
 #include "Point.h"
 #include "Vector.h"
 #include "Line.h"
+#include "Segment.h"
 #include "Triangle.h"
 
 using namespace std;
@@ -43,7 +44,9 @@ int main( ) {
 
     cout<<"mixed work  whit 3 vector  = "<<v1(v2,v3)<<endl;
     Line L(p,p1);
-    cout<<L.directionLine(L);
+    cout<<L.directionLine(L)<<"\n";
+    Segment segment(p,v,0,1,1);
+    cout<<"segment is = "<<segment;
 
     return  0;
 }

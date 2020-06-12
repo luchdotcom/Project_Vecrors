@@ -26,7 +26,7 @@ double Vector::lengthVector(const Point& lhs,const Point& rhs){
 }
 //изчисляване на дължина на вектор чрез 3 реални стойности, която връща реалното число
 double Vector::lengthVector(double x,double y ,double z ){
-    return sqrt(pow(x,2) + pow(y,2) + pow(z,2));
+    return sqrt(pow(x,2) + (pow(y,2) )+ (pow(z,2)));
 }
 
 //изчисляване на посока на вектор, която връща единичния вектор
