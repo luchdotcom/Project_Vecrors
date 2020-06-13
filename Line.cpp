@@ -3,7 +3,7 @@
 //
 
 #include "Line.h"
-Line::Line( ) :x(0),y(0),z(0){}
+Line::Line( ) :x(0),y(0),z(0),t(0){}
 Line::Line(const Line&rhs):x(rhs.x),y(rhs.y),z(rhs.z){
 }
 
@@ -20,14 +20,17 @@ Line &Line::operator=( const Line & rhs) {
 
 Line::~Line( ) = default;
 Line::Line(double x,double y ,double z ):x(x),y(y),z(z){}
-Line::Line( Vector & lhs, Point &rhs ):Vector(lhs),Point(rhs) {
+Line::Line( Vector & lhs, Point &rhs, int t):Vector(lhs),Point(rhs),t(t) {
+    x=lhs.getX()*t+x;
+    y=lhs.getY()*t+y;
+    z=lhs.getZ()*t+z;
 }
 
-Line::Line( Point &lhs, Point & rhs ):Point(lhs){
+Line::Line( Point &lhs, Point & rhs, int t):Point(lhs),t(t){
     this->x=rhs.getX()-lhs.getX();
     this->y=rhs.getY()-lhs.getY();
     this->z=rhs.getZ()-lhs.getZ();
-    Line(lhs.getX()-x,lhs.getY()-y,lhs.getZ()-z);
+    Line(lhs.getX()+x*t,lhs.getY()+y*t,lhs.getZ()+z*t);
 
 }
 
@@ -42,8 +45,9 @@ Vector Line::normalVector( const Line& rhs) {
     return Vector(x,y,z);
 }
 
-double Line::angelBetweenTwoLines( ) {
-    return 0;
+double Line::angelBetweenTwoLines(const Line & rhs ) {
+
+    return ;
 }
 
 bool Line::operator+( const Point & rhs) const {

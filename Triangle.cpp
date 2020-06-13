@@ -22,10 +22,7 @@ Triangle &Triangle::operator=( const Triangle &point ) {
         c = point.c;
     }
     return *this ;
-}/*
-bool Triangle::operator==( const Triangle &rhs ) const {
-    return false;
-}*/
+}
 bool Triangle::operator < (const Triangle & point) const {
 
 }

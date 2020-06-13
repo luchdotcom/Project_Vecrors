@@ -31,7 +31,7 @@ public:
 
      Vector operator+(Vector&);
      Vector operator-(Vector&);
-     double operator*(Vector&) const;//todo провери си формулата
+     double operator*(Vector&) const;
      explicit operator double () const ;
      Vector operator*(double );
      Vector operator^(const Vector&) const;
