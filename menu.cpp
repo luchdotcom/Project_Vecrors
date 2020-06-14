@@ -764,7 +764,7 @@ int menu( ) {
             std::cout <<"do you want to save the information for yesenter 'y' for break enter 'n'";
             std::cin >>sym;
             if (sym =='y'){
-                std::ofstream out("vectors.txt");
+                std::ifstream out("vectors.txt" ,std::ios::out);
                 if (!out){
                     std::cerr<<"file vectors.txt not be created";
                     return 2;
@@ -772,10 +772,10 @@ int menu( ) {
                 const unsigned Len=100;
                 char line[Len+1];
                 out.open("main.cpp");
-                using namespace std;
                 while (out.getline(line,Len)){
                     std::cout<<line<<std::endl;
                 }
+                out.close();
             }
         }
     }while (sym !='n');
