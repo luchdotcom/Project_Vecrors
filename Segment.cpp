@@ -9,11 +9,10 @@ Segment::Segment( ):Point(),start(0),end(0),t(0) {
 }
 
 Segment::Segment(const Point &lhs, const Vector& rhs, int start, int end ,int t):Point(lhs),Vector(rhs),start(start),end(end),t(t){
-   if (t >=start && t<=end){
        double x=lhs.getX()+rhs.getX()*t;
        double y=lhs.getY()+rhs.getY()*t;
        double z=lhs.getZ()+rhs.getZ()*t;
-   }
+
 }
 
 Segment::Segment( const Segment & rhs)  : Point(rhs), Vector(rhs), Line(rhs) {

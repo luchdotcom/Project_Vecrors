@@ -20,7 +20,7 @@ public:
 
     virtual ~Vector( );
     double lengthVector(const Point&,const Point&);
-    static Vector directionVector(double ,double ,double );
+    Vector directionVector(double ,double ,double );
     static double lengthVector(double ,double ,double ) ;
     bool nullVector()const ;
     bool parallelInVectors(const Vector&)const ;

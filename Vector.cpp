@@ -50,11 +50,12 @@ std::ostream & Vector::ins(std::ostream &out)const {
 }
 //проверка за нулев вектор
 bool Vector::nullVector( ) const {
-    return x == y == z == 0;
+    bool f= ( x == y && y == z ) == 0;
+    return f;
 }
 
 bool Vector::parallelInVectors( const Vector&rhs) const {
-    if ( lengthVector(x,y,z)==0||lengthVector(rhs.x,rhs.y,rhs.z)==0){
+    if ( this->nullVector()||rhs.nullVector()){
         throw VectorLengthException("have a null vector");
     }
     return x / rhs.x == y /rhs.y&& y/rhs.y == z / rhs.z;
@@ -62,7 +63,7 @@ bool Vector::parallelInVectors( const Vector&rhs) const {
 //• проверка за перпендикулярност на текущия вектор
 bool Vector::perpendicular(const Vector& rhs)const {
     if (lengthVector(x,y,z)==0||lengthVector(rhs.x,rhs.y,rhs.z)==0){
-        throw VectorLengthException(" ones on vectoir is =0");
+        throw VectorLengthException(" ones on vector is =0");
     }
     return (x*rhs.x+y*rhs.y+z*rhs.z==0);
 }
@@ -95,7 +96,8 @@ Vector Vector::operator-(Vector& rhs){
 //скаларно произведение на два вектора, чрез операция *, като резултат се получава
 //реално число:
 double Vector::operator*(Vector&rhs) const{
-   return ((x*rhs.x)+(y*rhs.y)+(z*rhs.z));
+    double res=(( this->x*rhs.x)+(this->y*rhs.y)+(this->z*rhs.z));
+   return res;
 }
 Vector::operator double () const {
     return x;

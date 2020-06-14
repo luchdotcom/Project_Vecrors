@@ -4,6 +4,7 @@
 
 #include "Line.h"
 Line::Line( ) :x(0),y(0),z(0),t(0){}
+Line::Line(int l ) {}
 Line::Line(const Line&rhs):x(rhs.x),y(rhs.y),z(rhs.z){
 }
 
@@ -34,8 +35,8 @@ Line::Line( Point &lhs, Point & rhs, int t):Point(lhs),t(t){
 
 }
 
-Vector Line::directionLine( const Line& rhs)  {
-  return directionVector(rhs.x,rhs.y,rhs.z);
+Vector Line::directionLine( )  {
+  return directionVector(x,y,z);
 }
 
 Vector Line::normalVector( const Line& rhs) {
@@ -47,7 +48,7 @@ Vector Line::normalVector( const Line& rhs) {
 
 double Line::angelBetweenTwoLines(const Line & rhs ) {
 
-    return ;
+    return 0;
 }
 
 bool Line::operator+( const Point & rhs) const {

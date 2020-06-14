@@ -12,13 +12,14 @@
 class Line : virtual public Point,virtual public Vector{
 public:
     Line();
+    Line(int );
     Line(const Line&);
     Line & operator=(const Line&);
    ~Line() override;
    Line(double ,double ,double );
     Line(Vector&,Point&,int);
     Line(Point&,Point&, int );
-    Vector directionLine(const Line&);
+    Vector directionLine();
     Vector normalVector( const Line&);
     double angelBetweenTwoLines(const Line&);//todo
 

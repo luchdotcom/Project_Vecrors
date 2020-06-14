@@ -8,11 +8,10 @@
 
 class VectorLengthException : public std::exception{
 public:
-    VectorLengthException( const std::string & );
+    explicit VectorLengthException( const std::string & );
 
 
 private:
-    int min;
 };
 
 

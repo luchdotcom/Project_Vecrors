@@ -5,10 +5,11 @@
 #include "Line.h"
 #include "Segment.h"
 #include "Triangle.h"
+#include "menu.h"
 
 using namespace std;
 
-int main( ) {
+int main( ) {/*
     Point p0;
     Point p(1,0,4);
     Point p1(4,0,5);
@@ -43,10 +44,11 @@ int main( ) {
     cout<<"null vector  = "<<v1.nullVector()<<endl;
 
     cout<<"mixed work  whit 3 vector  = "<<v1(v2,v3)<<endl;
-    Line L(p,p1);
+    Line L(p,p1,0);
     cout<<L.directionLine(L)<<"\n";
-    Segment segment(p,v,0,1,1);
+    Segment segment(p,v,0,2,1);
     cout<<"segment is = "<<segment;
-
+*/
+menu();
     return  0;
 }
