@@ -38,10 +38,12 @@ Segment::~Segment( ) {
 
 double Segment::segmentLen( Segment & rhs) {
     return sqrt(pow(getX()-rhs.getX(),2)+pow(getY()-rhs.getY(),2)+pow(getZ()-rhs.getZ(),2));
+
 }
 
-Point Segment::segmentMiddle(const Segment& rhs ) {
-    return Point(getX()+rhs.getX()/2,getY()+rhs.getY()/2,getZ()+rhs.getZ()/2);
+Point Segment::segmentMiddle() {
+    Vector v;
+    return Point(getX()+v.getX()/2,getY()+v.getY()/2,getZ()+v.getZ()/2);
 }
 
 bool Segment::operator==( const Point &rhs ) {

@@ -81,10 +81,10 @@ Vector& Vector::operator=(const Vector& rhs){
 }
 //събиране на два вектора, чрез операция +, като резултат се получава отново вектор:
 Vector Vector::operator+(Vector&rhs){
-    this->x=x+rhs.x;
-    this->y=y+rhs.y;
-    this->z=z+rhs.z;
-    return *this;
+    x=x+rhs.x;
+    y=y+rhs.y;
+    z=z+rhs.z;
+    return Vector(x,y,z);
 }
 // изваждане на два вектора, чрез операция −, като резултат се получава отново вектор:
 Vector Vector::operator-(Vector& rhs){

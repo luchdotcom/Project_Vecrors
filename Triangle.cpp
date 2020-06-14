@@ -4,7 +4,7 @@
 
 #include "Triangle.h"
 
-Triangle::Triangle( const Point &point ) : Point( point ) { }
+Triangle::Triangle( const Point &point1,const Point & point2,const Point & point3 ) : Point( point1 ) { }
 
 Triangle::Triangle( ):a(0),b(0),c(0) { }
 
@@ -17,6 +17,7 @@ std::ostream &operator<<( std::ostream &os, const Triangle &triangle ) {
 
 Triangle &Triangle::operator=( const Triangle &point ) {
     if (this!=&point) {
+        Point::operator=(point);
         a = point.a;
         b = point.b;
         c = point.c;
@@ -25,18 +26,19 @@ Triangle &Triangle::operator=( const Triangle &point ) {
 }
 bool Triangle::operator < (const Triangle & point) const {
 
-}
-bool Triangle::operator > ( const Triangle & ) const {
 
 }
-double Triangle::area(){
-    return (a*b)/2;///???? check formula
+bool Triangle::operator > ( const Triangle & point) const {
 
 }
-double Triangle::perimetur(){
+double Triangle::area() const{
+    return (a+b+c)/2;///???? check formula
+
+}
+double Triangle::perimeter() const{
     return a+b+c;
 }
-Point Triangle::mediCenter(){
+Point Triangle::mediCenter() const{
     //намиране на медианите на триъгълника
     double Ma,Mb,Mc;
     Ma=sqrt((2*c*c)+(2*b*b)-a*a)/2;

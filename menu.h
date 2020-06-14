@@ -11,6 +11,10 @@
 #include "Segment.h"
 #include "Triangle.h"
 #include <iomanip>
+#include <fstream>
+#include <string>
+#include <iostream>
 int menu();
 int enterLine();
+void enterPoint();
 #endif //PROJECT_VECRORS_MENU_H

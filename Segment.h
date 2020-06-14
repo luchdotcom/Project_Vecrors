@@ -16,7 +16,7 @@ public:
     Segment& operator=(const Segment&);
     ~Segment();
     double segmentLen(Segment&);
-    Point segmentMiddle(const Segment&);
+    Point segmentMiddle();
 
     bool operator==(const Point&);
 private:

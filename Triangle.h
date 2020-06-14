@@ -14,7 +14,8 @@
 class Triangle : public Point{
 public:
     Triangle( );
-    Triangle( const Point &);
+    Triangle( const Point &,const Point&,const Point&);
+
     Triangle( double d, double d1, double d2 );
     Triangle &operator=( const Triangle &point ) ;
 
@@ -25,14 +26,13 @@ public:
     std::ostream &ins( std::ostream &ostream ) const override;
     std::istream &ext( std::istream &istream ) override;
 
-    double area();//ok
-    double perimetur();///ok
-    Point mediCenter();
+    double area() const;//ok
+    double perimeter() const;///ok
+    Point mediCenter() const;
     std::string kindOfTriangle()const ;
 
 private:
-    double a,b,c;
-    std::string kind;
+    double a{},b{},c{};
 };
 
  std::ostream &operator<<( std::ostream &os, const Triangle &triangle );

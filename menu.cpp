@@ -70,7 +70,7 @@ int menu( ) {
                 std::cin >> z;
 
                 do {
-                    Vector vec;
+                    Vector vec(x,y,z);
                     std::cout << "please enter operation\n"
                               << " 1 for length of Vector\n"
                               << " 2 for  direction Vector\n"
@@ -132,7 +132,6 @@ int menu( ) {
                         } catch (...) {
                             std::cerr<< "samting wrong";
                         }
-
                     }
                     if ( operation == 7 ){
                         std::cout << "please enter value for second Vector\n";
@@ -588,11 +587,172 @@ int menu( ) {
                        }
                     }while (sl!='n');
 
+                break;
+            case 4:
+                char sy;
+                double xs,ys,zs;
+                int t,start, end;
 
+                do {
+                    Point ps;
+                    Vector vs;
+                    std::cout << "please enter value for Point 1\n";
+                    std::cout << "x= ";
+                    std::cin >> xs;
+                    std::cout << "y= ";
+                    std::cin >> ys;
+                    std::cout << "z= ";
+                    std::cin >> zs;
+                    ps=Point(xs,ys,zs);
+                    std::cout << "please enter value for Vector \n";
+                    std::cout << "x= ";
+                    std::cin >> xs;
+                    std::cout << "y= ";
+                    std::cin >> ys;
+                    std::cout << "z= ";
+                    std::cin >> zs;
+                    Vector vc(xs,ys,zs);
+                    vs=vc;
+                    std::cout << "please enter inteval \n start = ";
+                    std::cin>>start;
+                    std::cout <<"end =";
+                    std::cin>>end;
+                    std::cout <<" distance =";
+                    std::cin>>t;
+
+                    std::cout << "please enter operation\n"
+                              << " 1for length of segment\n"
+                              << " 2 for middle of Segment   \n"
+                              << " 3 for point are lays of Segment \n ";
+                              int oper;
+
+                    std::cin>>oper;
+                    if (oper==1){
+                        Segment segment(ps,vs,start,end,t);
+                        std::cout <<"Length of Segment is = "<<segment.segmentLen(segment)<<"\n";
+                    }
+                    if (oper==2){
+                        Segment segment(ps,vs,start,end,t);
+                        std::cout <<"middle of Segment is = "<<segment.segmentMiddle()<<"\n";
+                    }
+                    if (oper==3){
+                        Segment segment(ps,vs,start,end,t);
+                        std::cout << "please enter value for Point \n";
+                        std::cout << "x= ";
+                        std::cin >> xs;
+                        std::cout << "y= ";
+                        std::cin >> ys;
+                        std::cout << "z= ";
+                        std::cin >> zs;
+                        Point pp(xs,ys,zs);
+                        bool f=segment==pp;
+                        std::cout <<" are it lays Point of Segment "<<std::boolalpha<<f<<"\n";
+                    }
+
+                    std::cout<<"if are you continue another object pleas enter 'y' for break enter 'n' \n";
+                    std::cin >>sy;
+                }while (sy!='n');
                 break;
-            case 4:  //създаване на обекти от тип Segment
-                break;
-            case 5: //създаване на обекти от тип Triangle
+
+                case 5:
+                char st;
+                int fun;
+
+                do {
+                    double xt, yt, zt;
+                    std::cout << "please enter value for Point 1 \n";
+                    std::cout << "x= ";
+                    std::cin >> xt;
+                    std::cout << "y= ";
+                    std::cin >> yt;
+                    std::cout << "z= ";
+                    std::cin >> zt;
+                    Point pt(xt,yt,zt);
+                    std::cout << "please enter value for Point 2 \n";
+                    std::cout << "x= ";
+                    std::cin >> xt;
+                    std::cout << "y= ";
+                    std::cin >> yt;
+                    std::cout << "z= ";
+                    std::cin >> zt;
+                    Point pt1(xt,yt,zt);
+                    std::cout << "please enter value for Point 3  \n";
+                    std::cout << "x= ";
+                    std::cin >> xt;
+                    std::cout << "y= ";
+                    std::cin >> yt;
+                    std::cout << "z= ";
+                    std::cin >> zt;
+                    Point pt2(xt,yt,zt);
+                    Triangle triangle;
+                    std::cout << "please enter operation\n"
+                              << " 1for Perimeter of Triangle\n"
+                              << " 2 for area of Triangle   \n"//todo
+                              << " 3 for is the point in the triangle \n "//todo
+                              << " 4 for is the point in outside the triangle \n"//todo
+                              << " 5 for the point in lies on either side   \n"//todo
+                              << " 6 for medicenter of Triangle \n "
+                              << " 7 for medicenter of Triangle \n ";
+                    std::cin>> fun;
+                    if (fun==1){
+                        triangle=Triangle(pt,pt1,pt2);
+                        std::cout<<" Perimeter is = "<<triangle.perimeter()<<"\n";
+                    }
+                    if (fun==2){
+                        Triangle triangle1(pt,pt1,pt2);
+                        std::cout<<" area is = "<<triangle.area()<<"\n";
+                    }
+                    if (fun==3){
+                        Triangle triangle1(pt,pt1,pt2);
+                        std::cout << "please enter value for Point 1 \n";
+                        std::cout << "x= ";
+                        std::cin >> xt;
+                        std::cout << "y= ";
+                        std::cin >> yt;
+                        std::cout << "z= ";
+                        std::cin >> zt;
+                        Point p3(xt,yt,zt);
+                       // bool re= triangle < p3;
+                        //std::cout<<" Perimeter is = "<<std::boolalpha<<re;
+                    }
+                    if (fun==4){
+                        Triangle triangle1(pt,pt1,pt2);
+                        std::cout << "please enter value for Point 1 \n";
+                        std::cout << "x= ";
+                        std::cin >> xt;
+                        std::cout << "y= ";
+                        std::cin >> yt;
+                        std::cout << "z= ";
+                        std::cin >> zt;
+                        Point p3(xt,yt,zt);
+                       // bool re= triangle > p3;
+                      //  std::cout<<" Perimeter is = "<<std::boolalpha<<re;
+                    }
+                    if (fun==5){
+                        Triangle triangle1(pt,pt1,pt2);
+                        std::cout << "please enter value for Point 1 \n";
+                        std::cout << "x= ";
+                        std::cin >> xt;
+                        std::cout << "y= ";
+                        std::cin >> yt;
+                        std::cout << "z= ";
+                        std::cin >> zt;
+                        Point p3(xt,yt,zt);
+                        bool re= triangle == p3;
+                        std::cout<<" Perimeter is = "<<std::boolalpha<<re;
+                    }
+                    if (fun==6){
+                        triangle=Triangle(pt,pt1,pt2);
+                        std::cout<<" Perimeter is = "<<triangle.mediCenter()<<"\n";
+                    }
+                    if (fun==7) {
+                        triangle=Triangle(pt,pt1,pt2);
+                        std::cout<<" kind  is = "<<triangle.kindOfTriangle()<<"\n";
+                    }
+
+                    std::cout<<"if are you continue another object pleas enter 'y' for break enter 'n' \n";
+                    std::cin >>st;
+                }while (st!='n');
                 break;
             default:
                 std::cout<<"dont correct operation\n";
@@ -600,6 +760,24 @@ int menu( ) {
         }
         std::cout<<"if are you continue another object pleas enter 'y' for break enter 'n' \n";
         std::cin >>sym;
+        if (sym =='n'){
+            std::cout <<"do you want to save the information for yesenter 'y' for break enter 'n'";
+            std::cin >>sym;
+            if (sym =='y'){
+                std::ofstream out("vectors.txt");
+                if (!out){
+                    std::cerr<<"file vectors.txt not be created";
+                    return 2;
+                }
+                const unsigned Len=100;
+                char line[Len+1];
+                out.open("main.cpp");
+                using namespace std;
+                while (out.getline(line,Len)){
+                    std::cout<<line<<std::endl;
+                }
+            }
+        }
     }while (sym !='n');
 
     return 0;
@@ -628,4 +806,15 @@ int enterLine(){
     std::cout << "= ";
    //std::cin>>t;
     return 0;
+}
+
+void enterPoint() {
+    double x, y, z;
+    std::cout << "please enter value  \n";
+    std::cout << "x= ";
+    std::cin >> x;
+    std::cout << "y= ";
+    std::cin >> y;
+    std::cout << "z= ";
+    std::cin >> z;
 }

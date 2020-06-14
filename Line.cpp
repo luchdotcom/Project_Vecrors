@@ -47,8 +47,8 @@ Vector Line::normalVector( const Line& rhs) {
 }
 
 double Line::angelBetweenTwoLines(const Line & rhs ) {
-
-    return 0;
+double result =( x*rhs.x+y*rhs.y+z*rhs.z)/(sqrt(pow(x,2)+pow(y,2)+pow(z,2)*(sqrt(pow(rhs.x,2)+pow(rhs.y,2)+pow(rhs.z,2)))));
+    return result;
 }
 
 bool Line::operator+( const Point & rhs) const {
