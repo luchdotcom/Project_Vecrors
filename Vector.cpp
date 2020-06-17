@@ -50,7 +50,7 @@ std::ostream & Vector::ins(std::ostream &out)const {
 }
 //проверка за нулев вектор
 bool Vector::nullVector( ) const {
-    bool f= ( x == y && y == z ) == 0;
+    bool f= ( x == y && y == z ) != 0;
     return f;
 }
 
@@ -96,7 +96,7 @@ Vector Vector::operator-(Vector& rhs){
 //скаларно произведение на два вектора, чрез операция *, като резултат се получава
 //реално число:
 double Vector::operator*(Vector&rhs) const{
-    double res=(( this->x*rhs.x)+(this->y*rhs.y)+(this->z*rhs.z));
+    double res=((x*rhs.x)+(y*rhs.y)+(z*rhs.z));
    return res;
 }
 Vector::operator double () const {
@@ -110,7 +110,7 @@ Vector Vector::operator*(double realDigit){
 }
 //векторно произведение на два вектора, чрез операция ^ като резултатът е вектор.
 Vector Vector::operator^(const Vector& rhs) const {
-    return Vector(( y * rhs.z ) - ( z * rhs.y ), (( -x * rhs.z ) + ( z * rhs.x )), ( x * rhs.y ) - ( y * rhs.x ));
+    return Vector(( y * rhs.z ) - ( z * rhs.y ), -( x * rhs.z ) + ( z * rhs.x ), ( x * rhs.y ) - ( y * rhs.x ));
 }
 //смесено произведение на три вектора, чрез операция ()
 double Vector::operator()(const Vector&u, const Vector& v){

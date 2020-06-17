@@ -10,13 +10,19 @@ class Element {
 public:
     Element();
     virtual ~Element();
+    Element &operator=(const Element&);
     virtual std::ostream & ins(std::ostream &)const =0;
     virtual std::istream & ext(std::istream &)=0;
     double lengthVector() ;
-
+    double getX( ) const;
+    double getY( ) const;
+    double getZ( ) const;
 
 private:
     double x,y,z;
+public:
+
+
 };
 
 

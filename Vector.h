@@ -18,7 +18,7 @@ public:
     Vector(const Point&,const Point&);
 
 
-    virtual ~Vector( );
+    ~Vector( ) override;
     double lengthVector(const Point&,const Point&);
     Vector directionVector(double ,double ,double );
     static double lengthVector(double ,double ,double ) ;

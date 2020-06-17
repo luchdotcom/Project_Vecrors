@@ -4,7 +4,11 @@
 
 #include "Triangle.h"
 
-Triangle::Triangle( const Point &point1,const Point & point2,const Point & point3 ) : Point( point1 ) { }
+Triangle::Triangle( const Point &point1,const Point & point2,const Point & point3 ) : Point(point1 ) {
+    a=point1.getX();
+    b=point2.getY();
+    c=point3.getZ();
+}
 
 Triangle::Triangle( ):a(0),b(0),c(0) { }
 
@@ -32,11 +36,12 @@ bool Triangle::operator > ( const Triangle & point) const {
 
 }
 double Triangle::area() const{
-    return (a+b+c)/2;///???? check formula
+    return sqrt(perimeter()*(perimeter()-a)*(perimeter()-b)*(perimeter()-c));
 
 }
 double Triangle::perimeter() const{
-    return a+b+c;
+    return getX()+getY()+getZ()/2;
+  //  return ( a+ this->b+ this->c)/2;
 }
 Point Triangle::mediCenter() const{
     //намиране на медианите на триъгълника

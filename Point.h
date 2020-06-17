@@ -23,7 +23,7 @@ public:
     double getY( ) const;
     double getZ( ) const;
 
-    virtual Point &operator=(const Point&);
+     Point &operator=(const Point&);
     virtual bool operator==( const Point &rhs ) const;
     bool operator < (const Point &) const ;//todo
     bool operator > ( const Point & ) const ;//todo

@@ -6,7 +6,11 @@
 Point::Point( ):x(0),y(0),z(0) { }
 Point::Point( double x, double y, double z):x(x),y(y),z(z) {
 }
-Point::Point( const Point & rhs):x(x),y(y),z(z) {
+Point::Point( const Point & rhs) : Element(rhs) {
+    x=rhs.x;
+    y=rhs.y;
+    z=rhs.z;
+
 }
 
 Point::~Point( ) {
@@ -21,7 +25,7 @@ double Point::getY( ) const {
 }
 
 bool Point::operator==( const Point &rhs ) const {
-    return (x == rhs.x && y  == rhs.z);
+    return !(x == rhs.x && y  == rhs.z);
 }
 
 double Point::getZ( ) const {
@@ -50,6 +54,7 @@ std::ostream &Point::ins( std::ostream & out) const {
 
 Point &Point::operator=( const Point & rhs) {
     if (this!=&rhs){
+        Element::operator=(rhs);
         x=rhs.x;
         y=rhs.y;
         z=rhs.z;
