@@ -15,7 +15,6 @@ Triangle::Triangle( ):a(0),b(0),c(0) { }
 Triangle::Triangle( double a, double b, double c ) : a(a),b(b),c(c) { }
 
 std::ostream &operator<<( std::ostream &os, const Triangle &triangle ) {
-
     return triangle.ins(os);
 }
 

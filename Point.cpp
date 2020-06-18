@@ -25,7 +25,7 @@ double Point::getY( ) const {
 }
 
 bool Point::operator==( const Point &rhs ) const {
-    return !(x == rhs.x && y  == rhs.z);
+    return (x == rhs.x && z == rhs.z && y== rhs.y);
 }
 
 double Point::getZ( ) const {
