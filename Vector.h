@@ -20,8 +20,8 @@ public:
 
     ~Vector( ) override;
     double lengthVector(const Point&,const Point&);
-    Vector directionVector(double ,double ,double );
-    static double lengthVector(double ,double ,double ) ;
+    Vector directionVector( );
+    double lengthVector( ) const ;
     bool nullVector()const ;
     bool parallelInVectors(const Vector&)const ;
 

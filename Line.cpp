@@ -36,7 +36,7 @@ Line::Line( Point &lhs, Point & rhs, int t):Point(lhs),t(t){
 }
 
 Vector Line::directionLine( )  {
-  return directionVector(x,y,z);
+  return directionVector();
 }
 
 Vector Line::normalVector( const Line& rhs) {

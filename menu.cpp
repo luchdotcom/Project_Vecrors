@@ -86,10 +86,10 @@ int menu( ) {
                     std::cin >> operation;
 
                     if ( operation == 1 ) {
-                            std::cout<<"length vector is ="<<vec.lengthVector(x,y,z)<<"\n";
+                            std::cout<<"length vector is ="<<vec.lengthVector()<<"\n";
                     }
                     if ( operation == 2 ){
-                        std::cout<<"direction vector is ="<<vec.directionVector(x,y,z)<<"\n";
+                        std::cout<<"direction vector is ="<<vec.directionVector()<<"\n";
                     }
                     if ( operation == 3 ){
                         std::cout << "please enter value for second Vector\n";
@@ -612,7 +612,6 @@ int menu( ) {
                     std::cout << "z= ";
                     std::cin >> zs;
                     Vector vc(xs,ys,zs);
-                    vs=vc;
                     std::cout << "please enter inteval \n start = ";
                     std::cin>>start;
                     std::cout <<"end =";

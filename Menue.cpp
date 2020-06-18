@@ -47,8 +47,41 @@ int menu1( ){
                 } while ( pChoice!='n');
                 break;
             case 2:
+                char sV; //символ за избор дали да се продължи с операциите с вектори
+                double xv, yv, zv;
+                std::cout << "please enter value for Vector\n";
+                std::cout << "x= ";
+                std::cin >> xv;
+                std::cout << "y= ";
+                std::cin >> yv;
+                std::cout << "z= ";
+                std::cin >> zv;
+
+                do {
+                    Vector vector(xv,yv,zv);
+                    operationVectors();  //избор на операция с вектори
+                    std::cin>>operation;
+                    if (operation == 1 ){
+                        std::cout<<" length of Vector is = "<<vector.lengthVector();
+                    }
+                    if (operation == 2 ){
+                        std::cout << " Direction of Vector is= "<<vector.directionVector();
+                    }
+                    if (operation == 3 ){}
+                    if (operation == 4 ){}
+                    if (operation == 5 ){}
+                    if (operation == 6 ){}
+                    if (operation == 7 ){}
+                    if (operation == 8 ){}
+                    if (operation == 9 ){}
+                    if (operation == 10 ){}
+                    if (operation == 11 ){}
+
+                    std::cout << "\nif are you continue for Point operation pleas enter 'y' for break enter 'n' \n";
+                    std::cin>>sV; //чете дали да се продължи с вектори
+                }while (sV!='n');
                 break;
-            case 3:
+            case 3:std::cout<<"";
                 break;
             case 4:
                 break;
@@ -58,7 +91,7 @@ int menu1( ){
                 break;
 
         }
-        std::cout << "if are you continue for Point operation pleas enter 'y' for break enter 'n' \n";
+        std::cout << "if are you continue for another object pleas enter 'y' for break enter 'n' \n";
         std::cin>>m;
     }while (m!='n');
 
@@ -82,14 +115,14 @@ int operationVectors( ) {
     std::cout << "please enter operation\n"
               << " 1 for length of Vector\n"
               << " 2 for  direction Vector\n"
-              << " 3 for difference 2 Vector\n"
-              << " 4 for is null  Vector\n"
-              << " 5 for is parallel  Vector\n"
-              << " 6 for is perpendicular Vector\n"
-              << " 7 for sum Vector\n"
-              << " 8 for multiply Vector whit real digit\n"
-              << " 9 for scalar multiply of Vector\n"
-              << " 10 for Vector multiply 2 Vector\n"
-              << " 11 for multiply 3  Vector\n";
+              << " 3 for difference 2 Vector\n"//todo
+              << " 4 for is null  Vector\n"//todo
+              << " 5 for is parallel  Vector\n"//todo
+              << " 6 for is perpendicular Vector\n"//todo
+              << " 7 for sum Vector\n"//todo
+              << " 8 for multiply Vector whit real digit\n"//todo
+              << " 9 for scalar multiply of Vector\n"//todo
+              << " 10 for Vector multiply 2 Vector\n"//todo
+              << " 11 for multiply 3  Vector\n";//todo
     return 0;
 }

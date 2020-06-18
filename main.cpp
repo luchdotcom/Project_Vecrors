@@ -1,5 +1,5 @@
 
-#include "menu.h"
+#include "Menue.h"
 
 using namespace std;
 
@@ -9,6 +9,6 @@ int main( ) {
     Triangle triangle(p1,p2,p3),tri(4,13,15);
 
     cout << "area is "<<triangle.area();*/
-menu();
+menu1();
     return  0;
 }

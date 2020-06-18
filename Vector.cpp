@@ -25,20 +25,23 @@ double Vector::lengthVector(const Point& lhs,const Point& rhs){
     return sqrt(pow(x,2) + pow(y,2) + pow(z,2));
 }
 //изчисляване на дължина на вектор чрез 3 реални стойности, която връща реалното число
-double Vector::lengthVector(double x,double y ,double z ){
-    return sqrt(pow(x,2) + (pow(y,2) )+ (pow(z,2)));
+double Vector::lengthVector( ) const{
+    return sqrt((pow(x,2)) + ((pow(y,2) ))+ (pow(z,2)));
 }
 
 //изчисляване на посока на вектор, която връща единичния вектор
-Vector Vector::directionVector( double x1,double y1,double z1) {
-    double x=x1/lengthVector(x1,y1,z1);
-    double y=y1/lengthVector(x1,y1,z1);
-    double z=z1/lengthVector(x1,y1,z1);
+Vector Vector::directionVector( ) {
+    try {
+        if (lengthVector()==0) {
+            throw VectorLengthException( "Vector length is  =0" );
+        }
+    } catch (VectorLengthException& e) {
+        std::cerr<<"Vector Length except occurred here "<<e.what();
+    } catch (...) {
+        std::cerr<<"something wrong\n";
+    }
 
-       if (lengthVector(x,y,z)==0) {
-           throw VectorLengthException( "Vector length is  =0" );
-       }
-    return Vector(x,y,z);
+    return Vector(x/lengthVector(),y/lengthVector(),z/lengthVector());
 }
 std::ostream & Vector::ins(std::ostream &out)const {
    return out<<x<<","<<y<<","<<z;
@@ -62,7 +65,7 @@ bool Vector::parallelInVectors( const Vector&rhs) const {
 }
 //• проверка за перпендикулярност на текущия вектор
 bool Vector::perpendicular(const Vector& rhs)const {
-    if (lengthVector(x,y,z)==0||lengthVector(rhs.x,rhs.y,rhs.z)==0){
+    if (lengthVector()==0||rhs.lengthVector()==0){
         throw VectorLengthException(" ones on vector is =0");
     }
     return (x*rhs.x+y*rhs.y+z*rhs.z==0);
