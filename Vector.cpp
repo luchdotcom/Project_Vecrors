@@ -30,17 +30,10 @@ double Vector::lengthVector( ) const{
 }
 
 //изчисляване на посока на вектор, която връща единичния вектор
-Vector Vector::directionVector( ) {
-    try {
+Vector Vector::directionVector( ) const {
         if (lengthVector()==0) {
             throw VectorLengthException( "Vector length is  =0" );
         }
-    } catch (VectorLengthException& e) {
-        std::cerr<<"Vector Length except occurred here "<<e.what();
-    } catch (...) {
-        std::cerr<<"something wrong\n";
-    }
-
     return Vector(x/lengthVector(),y/lengthVector(),z/lengthVector());
 }
 std::ostream & Vector::ins(std::ostream &out)const {
@@ -53,15 +46,15 @@ std::ostream & Vector::ins(std::ostream &out)const {
 }
 //проверка за нулев вектор
 bool Vector::nullVector( ) const {
-    bool f= ( x == y && y == z ) != 0;
+    bool f= ( x == y && y == z ) != 0;                          // проверка за нулев вектор и връща true илиfalse
     return f;
 }
 
 bool Vector::parallelInVectors( const Vector&rhs) const {
-    if ( this->nullVector()||rhs.nullVector()){
-        throw VectorLengthException("have a null vector");
+    if ( this->nullVector()||rhs.nullVector()){                  // прихваща изключение ако е нулев вектора
+        throw VectorLengthException("have a null vector");       //изхвърля изключения от тип Vector Length Exceptions
     }
-    return x / rhs.x == y /rhs.y&& y/rhs.y == z / rhs.z;
+    return x / rhs.x == y /rhs.y&& y/rhs.y == z / rhs.z;        // връща true или false
 }
 //• проверка за перпендикулярност на текущия вектор
 bool Vector::perpendicular(const Vector& rhs)const {
@@ -75,11 +68,10 @@ Vector::Vector (const Vector& rhs):x(rhs.x),y(rhs.y),z(rhs.z){
 Vector& Vector::operator=(const Vector& rhs){
     Point::operator=(rhs);
     if (this!=&rhs){
-        delete this;
+        x=rhs.x;
+        y=rhs.y;
+        z=rhs.z;
     }
-    x=rhs.x;
-    y=rhs.y;
-    z=rhs.z;
     return *this;
 }
 //събиране на два вектора, чрез операция +, като резултат се получава отново вектор:
@@ -116,8 +108,10 @@ Vector Vector::operator^(const Vector& rhs) const {
     return Vector(( y * rhs.z ) - ( z * rhs.y ), -( x * rhs.z ) + ( z * rhs.x ), ( x * rhs.y ) - ( y * rhs.x ));
 }
 //смесено произведение на три вектора, чрез операция ()
-double Vector::operator()(const Vector&u, const Vector& v){
-    return (((u.y*v.z)-(u.z*v.y))+((u.x*v.z)-(u.z*v.x))-((u.x*v.y)-(u.y*v.x)));
+double Vector::operator()(const Vector& b, const Vector& c) const{
+   return  ( this->x*b.y*c.z)+( this->y*b.z*c.x)+( this->z*b.x*b.z)-( this->z*b.y*c.x)-(c.y*b.z* this->x)-(c.z*b.x* this->y);
+
+   //return ((x*(u.y*v.z)-(u.z*v.y)*x)+(y*(u.x*v.z)-(u.z*v.x))-((u.x*v.y)-(u.y*v.x)));
 
 }
 std::ostream & operator<<(std::ostream & out,const Vector& rhs){

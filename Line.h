@@ -19,9 +19,9 @@ public:
    Line(double ,double ,double );
     Line(Vector&,Point&,int);
     Line(Point&,Point&, int );
-    Vector directionLine();
+     Vector directionLine() ;
     Vector normalVector( const Line&);
-    double angelBetweenTwoLines(const Line&);//todo
+    double angelBetweenTwoLines(const Line&) const;//todo
 
     bool operator+(const Point&) const;
     bool operator||(const Line&) const;
@@ -32,7 +32,7 @@ public:
    std::ostream& ins(std::ostream&)const override ;
     std::istream & ext(std::istream &) override;
 private:
-    int t;
+    int t{};
     double x,y,z;
 };
 std::ostream & operator<<(std::ostream &,const Line&);

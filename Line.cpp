@@ -11,16 +11,16 @@ Line::Line(const Line&rhs):x(rhs.x),y(rhs.y),z(rhs.z){
 Line &Line::operator=( const Line & rhs) {
     Vector::operator=(rhs);
     if (this!= &rhs){
-        delete this;
+        x=rhs.x;
+        y=rhs.y;
+        z=rhs.z;
     }
-    x=rhs.x;
-    y=rhs.y;
-    z=rhs.z;
+
     return *this;
 }
 
 Line::~Line( ) = default;
-Line::Line(double x,double y ,double z ):x(x),y(y),z(z){}
+Line::Line(double x,double y ,double z):x(x),y(y),z(z){}
 Line::Line( Vector & lhs, Point &rhs, int t):Vector(lhs),Point(rhs),t(t) {
     x=lhs.getX()*t+x;
     y=lhs.getY()*t+y;
@@ -36,7 +36,8 @@ Line::Line( Point &lhs, Point & rhs, int t):Point(lhs),t(t){
 }
 
 Vector Line::directionLine( )  {
-  return directionVector();
+    Vector v(getY(),getY(),getZ());
+  return v.directionVector();
 }
 
 Vector Line::normalVector( const Line& rhs) {
@@ -46,13 +47,14 @@ Vector Line::normalVector( const Line& rhs) {
     return Vector(x,y,z);
 }
 
-double Line::angelBetweenTwoLines(const Line & rhs ) {
-double result =( x*rhs.x+y*rhs.y+z*rhs.z)/(sqrt(pow(x,2)+pow(y,2)+pow(z,2)*(sqrt(pow(rhs.x,2)+pow(rhs.y,2)+pow(rhs.z,2)))));
+double Line::angelBetweenTwoLines(const Line & rhs ) const {
+double result =acos( (x*rhs.x+y*rhs.y+z*rhs.z)/(sqrt(pow(x,2)+pow(y,2)+pow(z,2)*(sqrt(pow(rhs.x,2)+pow(rhs.y,2)+pow(rhs.z,2))))));
     return result;
 }
 
 bool Line::operator+( const Point & rhs) const {
-    return (rhs.getX()-x/x==rhs.getY()-y/y && rhs.getY()-y/y == rhs.getZ()-z/z);
+
+    return (rhs.getX()-x==rhs.getY()-y && rhs.getY()-y == rhs.getZ()-z)==0;
 }
 
 bool Line::operator||( const Line &rhs ) const {

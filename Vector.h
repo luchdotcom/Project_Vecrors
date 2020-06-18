@@ -20,7 +20,7 @@ public:
 
     ~Vector( ) override;
     double lengthVector(const Point&,const Point&);
-    Vector directionVector( );
+    Vector directionVector( ) const ;
     double lengthVector( ) const ;
     bool nullVector()const ;
     bool parallelInVectors(const Vector&)const ;
@@ -35,7 +35,7 @@ public:
      explicit operator double () const ;
      Vector operator*(double );
      Vector operator^(const Vector&) const;
-     double operator()(const Vector&, const Vector&);
+     double operator()(const Vector&, const Vector&) const;
 
 
 
