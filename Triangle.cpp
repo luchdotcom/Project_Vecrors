@@ -27,20 +27,19 @@ Triangle &Triangle::operator=( const Triangle &point ) {
     }
     return *this ;
 }
-bool Triangle::operator < (const Triangle & point) const {
+bool Triangle::operator < ( const Point & point) {
 
 
 }
-bool Triangle::operator > ( const Triangle & point) const {
+bool Triangle::operator > ( const Point & point) const {
 
 }
 double Triangle::area() const{
-    return sqrt(perimeter()*(perimeter()-a)*(perimeter()-b)*(perimeter()-c));
+    return sqrt(perimeter()*((perimeter()- this->a)*(perimeter()-this->b)*(perimeter()-this->c)));
 
 }
 double Triangle::perimeter() const{
     return getX()+getY()+getZ()/2;
-  //  return ( a+ this->b+ this->c)/2;
 }
 Point Triangle::mediCenter() const{
     //намиране на медианите на триъгълника

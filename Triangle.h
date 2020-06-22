@@ -20,8 +20,8 @@ public:
     Triangle &operator=( const Triangle &point ) ;
 
     bool operator ==( const Point &rhs ) const override;//todo
-    bool operator < (const Triangle &) const ;//todo
-    bool operator > ( const Triangle & ) const ;//todo
+    bool operator < ( const Point &);//todo
+    bool operator > ( const Point & ) const ;//todo
 
     std::ostream &ins( std::ostream &ostream ) const override;
     std::istream &ext( std::istream &istream ) override;

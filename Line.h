@@ -21,7 +21,7 @@ public:
     Line(Point&,Point&, int );
      Vector directionLine() ;
     Vector normalVector( const Line&);
-    double angelBetweenTwoLines(const Line&) const;//todo
+    double angelBetweenTwoLines(const Line&) const;
 
     bool operator+(const Point&) const;
     bool operator||(const Line&) const;

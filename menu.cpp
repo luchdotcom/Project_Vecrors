@@ -628,7 +628,7 @@ int menu( ) {
                     std::cin>>oper;
                     if (oper==1){
                         Segment segment(ps,vs,start,end,t);
-                        std::cout <<"Length of Segment is = "<<segment.segmentLen(segment)<<"\n";
+                        std::cout <<"Length of Segment is = "<<segment.segmentLen()<<"\n";
                     }
                     if (oper==2){
                         Segment segment(ps,vs,start,end,t);
@@ -781,7 +781,7 @@ int menu( ) {
 
     return 0;
 }
-int enterLine(){
+/*int enterLine(){
     double xl,yl,zl;
     Vector v;
     Point p1,p2;
@@ -805,9 +805,9 @@ int enterLine(){
     std::cout << "= ";
    //std::cin>>t;
     return 0;
-}
+}*/
 
-void enterPoint() {
+/*void enterPoint() {
     double x, y, z;
     std::cout << "please enter value  \n";
     std::cout << "x= ";
@@ -816,4 +816,4 @@ void enterPoint() {
     std::cin >> y;
     std::cout << "z= ";
     std::cin >> z;
-}
+}*/

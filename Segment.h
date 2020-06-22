@@ -14,8 +14,8 @@ public:
     Segment(const Point&,const Vector&,int ,int,int );
     Segment(const Segment&);
     Segment& operator=(const Segment&);
-    ~Segment();
-    double segmentLen(Segment&);
+    ~Segment() override;
+    double segmentLen();
     Point segmentMiddle();
 
     bool operator==(const Point&);

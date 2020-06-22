@@ -14,7 +14,7 @@
 #include <fstream>
 #include <string>
 #include <iostream>
-int menu();
-int enterLine();
-void enterPoint();
+//int menu();
+//int enterLine();
+//void enterPoint();
 #endif //PROJECT_VECRORS_MENU_H

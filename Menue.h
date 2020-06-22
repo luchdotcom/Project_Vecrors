@@ -14,7 +14,13 @@
 #include <fstream>
 #include <string>
 #include <iostream>
+#include <algorithm>
 int menu1();
 int PrintMenu();
 int operationVectors();
+Vector enterVector();
+Point enterPoint();
+Line enterLine();
+int operationLine();
+int triangleMenu();
 #endif //PROJECT_VECRORS_MENUE_H

@@ -9,35 +9,35 @@ Segment::Segment( ):Point(),start(0),end(0),t(0) {
 }
 
 Segment::Segment(const Point &lhs, const Vector& rhs, int start, int end ,int t):Point(lhs),Vector(rhs),start(start),end(end),t(t){
-       double x=lhs.getX()+rhs.getX()*t;
+       double x=lhs.getX() + rhs.getX() * t;
        double y=lhs.getY()+rhs.getY()*t;
        double z=lhs.getZ()+rhs.getZ()*t;
 
 }
 
-Segment::Segment( const Segment & rhs)  : Point(rhs), Vector(rhs), Line(rhs) {
+Segment::Segment( const Segment & rhs)  {
     start=rhs.start;
     end=rhs.end;
     t=rhs.t;
 }
 
 Segment &Segment::operator=( const Segment & rhs) {
-    if (this!=&rhs){
-        delete this;
-    }
-    Line::operator=(rhs);
-    start=rhs.start;
-    end=rhs.end;
-    t=rhs.t;
-
+    if ( this != &rhs ) {
+    Line::operator=( rhs );
+    start = rhs.start;
+    end = rhs.end;
+    t = rhs.t;
+}
     return *this;
 }
 
 Segment::~Segment( ) {
 }
 
-double Segment::segmentLen( Segment & rhs) {
-    return sqrt(pow(getX()-rhs.getX(),2)+pow(getY()-rhs.getY(),2)+pow(getZ()-rhs.getZ(),2));
+double Segment::segmentLen() {
+    Vector v(getX(),getY(),getZ());
+    Point p(getX(),getY(),getZ());
+    return sqrt(pow(v.getX()-p.getX(),2)+pow(v.getY()-p.getY(),2)+pow(v.getZ()-p.getZ(),2));
 
 }
 
